@@ -29,14 +29,13 @@ func (ph *Page) WriteResponse(w http.ResponseWriter, data interface{}) {
 	}
 }
 
-// API Endpoint ---
-
-type API struct {
-	handler CustomResponseHandler
-}
-
 func (ph *Page) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	ph.WriteResponse(w, ph.handler(w, r))
+}
+
+// API Endpoint ---
+type API struct {
+	handler CustomResponseHandler
 }
 
 func (*API) WriteResponse(w http.ResponseWriter, data interface{}) {

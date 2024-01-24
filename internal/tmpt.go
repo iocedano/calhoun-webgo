@@ -14,7 +14,8 @@ func GetFSTemplate(name string) *template.Template {
 	if cachedTpl, ok := templates[name]; ok {
 		return cachedTpl
 	}
-
+	//#TODO: Define the template paths with os.FilePath
+	// Define a templates pattern: pages, widgets, layout.gohtml
 	tplPaths := []string{fmt.Sprintf("%s.gohtml", "layout"), fmt.Sprintf("widgets/%s.gohtml", "navbar"), filepath.Join("pages", fmt.Sprintf("%s.gohtml", name))}
 	// tpl, err := template.ParseFS(internalTpl.FS, tplPaths...)
 
