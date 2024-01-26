@@ -5,6 +5,6 @@ import (
 	"training/webgo/internal"
 )
 
-var SignUp = internal.CreatePage("signup", func(ResponseWriter http.ResponseWriter, Request *http.Request) interface{} {
+var SignUp = internal.CreatePage("signup", func(w http.ResponseWriter, r *http.Request) interface{} {
 	return nil
 })
